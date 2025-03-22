@@ -4,18 +4,44 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To-Do List</title>
-    <link rel="stylesheets" href="style.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>TO-DO LIST</h1>
-
-    <div>
-      <input type="text" placeholder="enter new item" />
-      <button onclick="addTodo()">ADD NEW TO-DO</button>
-      <button onclick="deleteFirstTodo()">DELETE FIRST TODO</button>
-      <button onclick="deleteLastTodo()">DELETE LAST TODO</button>
+    <div class="centre">
+      <div>
+        <h1>TO-DO LIST</h1>
+      </div>
     </div>
-    <div id="todo-list"></div>
+
+    <div class="centre" class="big-Container">
+      <div>
+        <input type="text" placeholder="enter new item" />
+      </div>
+      <div>
+        <button onclick="addTodo()" id="addFirst" class="btn add-btn">
+          ADD NEW TO-DO
+        </button>
+      </div>
+      <div>
+        <button
+          onclick="deleteFirstTodo()"
+          id="deleteFirstTodo"
+          class="btn delete-btn"
+        >
+          DELETE FIRST TODO
+        </button>
+      </div>
+      <div>
+        <button
+          onclick="deleteLastTodo()"
+          id="deleteLastTodo"
+          class="btn delete-btn"
+        >
+          DELETE LAST TODO
+        </button>
+      </div>
+    </div>
+    <div id="todo-list" class="todo-list"></div>
     <script src="script.js"></script>
   </body>
 </html>

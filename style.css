@@ -1,0 +1,50 @@
+body {
+  background-color: chocolate;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+h1 {
+  color: cornsilk;
+}
+input {
+  height: 30px;
+  border-radius: 10px;
+  width: 250px;
+  background-color: whitesmoke;
+}
+.centre {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 10px;
+  height: 100pvh;
+}
+.btn {
+  height: 30px;
+  border-radius: 10px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100pvh;
+  border: 10px;
+  border-color: brown;
+}
+.todo-items {
+  color: cornsilk;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 10px;
+}
+.add-btn {
+  background-color: green;
+  color: bisque;
+}
+.delete-btn {
+  background-color: red;
+  color: bisque;
+}

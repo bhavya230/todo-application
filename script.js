@@ -41,6 +41,11 @@
 let todos = []; //state
 
 function addTodo() {
+  if (document.querySelector("input").value === "") {
+    alert(" please enter a valid todo");
+    render();
+    return;
+  }
   todos.push({
     title: document.querySelector("input").value,
   });
@@ -48,26 +53,40 @@ function addTodo() {
 }
 
 function deleteFirstTodo() {
+  if (todos.length === 0) {
+    alert("no item to delete");
+    return;
+  }
   todos.splice(0, 1);
   render();
 }
 
 function deleteLastTodo() {
+  if (todos.length === 0) {
+    alert("no item to delete");
+    return;
+  }
   todos.pop();
   render();
 }
-
+function deleteSpecific(indx) {
+  todos.splice(indx, 1);
+  render();
+}
 // creating a todo component-- "div which has all things needed for  all todo item"
 
-function createTodoComponent(todo) {
+function createTodoComponent(todo, indx) {
   //todo passed is an object of todos array
   const div = document.createElement("div");
   const h4 = document.createElement("h4");
   const btn = document.createElement("button");
   h4.innerHTML = todo.title;
   btn.innerHTML = "DELETE";
+  btn.onclick = () => deleteSpecific(indx);
+  btn.classList.add("btn", "delete-btn");
   div.appendChild(h4);
   div.appendChild(btn);
+  div.classList.add("todo-items");
   return div;
 }
 
@@ -75,7 +94,7 @@ function render() {
   const parent = document.querySelector("#todo-list");
   parent.innerHTML = "";
   for (let i = 0; i < todos.length; i++) {
-    const elem = createTodoComponent(todos[i]);
+    const elem = createTodoComponent(todos[i], i);
     parent.appendChild(elem);
   }
 
